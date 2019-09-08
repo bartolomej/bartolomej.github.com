@@ -31,7 +31,6 @@ body {
 }
 
 #landing-left {
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -40,7 +39,6 @@ body {
 
 #landing-right {
     padding-left: 50px;
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -58,6 +56,7 @@ body {
 
 @media only screen and (max-width: 779px) {
     #landing-view {
+        height: unset;
         flex-direction: column;
     }
     #landing-left {
@@ -122,6 +121,10 @@ body {
 
 @media only screen and (max-width: 779px) {
     #container {
-        margin: 0 0;
+        margin: 100px 0;
+        display: unset;
+    }
+    .project-title {
+        display: none;
     }
 }
