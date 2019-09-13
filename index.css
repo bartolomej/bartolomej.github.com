@@ -7,6 +7,7 @@
 
 * {
     margin: 0;
+    padding: 0;
 }
 
 body {
@@ -52,14 +53,27 @@ body {
 #landing-text-view h1 {
     font-size: 40px;
     font-family: 'Spectral', serif;
+    margin-bottom: 20px;
+    line-height: 1;
 }
 
 @media only screen and (max-width: 779px) {
     #landing-view {
-        height: unset;
         flex-direction: column;
+        margin-bottom: 40px;
+    }
+    #landing-text-view {
+        width: 100%;
+        margin: 10px;
     }
     #landing-left {
+        justify-content: center;
+    }
+    #landing-left img {
+        width: 100%;
+    }
+    #landing-right {
+        padding: 0;
         justify-content: center;
     }
 }
@@ -85,10 +99,9 @@ body {
 
 .project-card {
     display: flex;
-    flex: 1;
+    flex: 3;
     text-decoration: none;
     flex-direction: row;
-    padding: 20px;
     margin-bottom: 100px;
 }
 
@@ -97,11 +110,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 10px;
 }
 
 .project-card-right {
-    margin: auto 20px;
     flex: 1.5;
+    margin: 10px;
 }
 
 .project-card-text-view {
@@ -112,6 +126,7 @@ body {
 .project-card-text-view h1 {
     font-size: 28px;
     font-family: 'Spectral', serif;
+    margin-bottom: 10px;
 }
 
 .project-card-image {
@@ -126,5 +141,9 @@ body {
     }
     .project-title {
         display: none;
+    }
+    .project-card {
+        flex-direction: column;
+        margin-bottom: 80px;
     }
 }
