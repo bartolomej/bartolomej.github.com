@@ -67,12 +67,14 @@ body {
         margin: 10px;
     }
     #landing-left {
+        flex: 2;
         justify-content: center;
     }
     #landing-left img {
-        width: 100%;
+        width: 90%;
     }
     #landing-right {
+        flex: 1;
         padding: 0;
         justify-content: center;
     }
@@ -134,7 +136,20 @@ body {
     margin: auto;
 }
 
-@media only screen and (max-width: 779px) {
+
+@media only screen and (max-width: 1200px) {
+    #container {
+        margin: 0 20%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    #container {
+        margin: 0 10%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
     #container {
         margin: 100px 0;
         display: unset;
@@ -145,5 +160,8 @@ body {
     .project-card {
         flex-direction: column;
         margin-bottom: 80px;
+    }
+    .project-card-text-view {
+        text-align: center;
     }
 }
