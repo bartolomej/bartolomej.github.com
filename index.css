@@ -20,12 +20,46 @@ body {
 }
 
 
+/***********
+ * TOP BAR *
+ ***********/
+
+#top-bar {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+}
+
+#bar-left {
+    flex: 1;
+}
+
+#bar-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.badge {
+    margin-left: 20px;
+    width: 35px;
+}
+
+.rotate:hover {
+    transform: rotate(360deg);
+    transition: transform 0.5s ease-in-out;
+}
+
 /***********************
  * LANDING VIEW STYLES *
  ***********************/
 
-#landing-view {
+#landing-container {
     height: 100vh;
+}
+
+#landing-view {
+    height: 80%;
     display: flex;
     flex: 1;
     flex-direction: row;
@@ -46,15 +80,21 @@ body {
     flex: 1;
 }
 
+#landing-image {
+    max-width: 400px;
+}
+
 #landing-text-view {
     width: 50%;
 }
 
 #landing-text-view h1 {
     font-size: 40px;
-    font-family: 'Spectral', serif;
-    margin-bottom: 20px;
     line-height: 1;
+}
+
+#landing-text-view p {
+    margin-top: 20px;
 }
 
 @media only screen and (max-width: 779px) {
@@ -64,7 +104,7 @@ body {
     }
     #landing-text-view {
         width: 100%;
-        margin: 10px;
+        margin: 20px;
     }
     #landing-left {
         flex: 2;
@@ -89,12 +129,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 30%;
-    padding: 50px 0;
+    padding: 100px 30%;
+    border-top: 4px dotted #ff3f81;
 }
 
 .project-title {
-    font-family: 'Spectral', serif;
     font-size: 40px;
     padding-bottom: 100px;
 }
@@ -112,12 +151,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px;
+    margin: 20px;
 }
 
 .project-card-right {
     flex: 1.5;
-    margin: 10px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .project-card-text-view {
@@ -127,7 +169,6 @@ body {
 
 .project-card-text-view h1 {
     font-size: 28px;
-    font-family: 'Spectral', serif;
     margin-bottom: 10px;
 }
 
@@ -139,19 +180,19 @@ body {
 
 @media only screen and (max-width: 1200px) {
     #container {
-        margin: 0 20%;
+        padding: 0 20%;
     }
 }
 
 @media only screen and (max-width: 1000px) {
     #container {
-        margin: 0 10%;
+        padding: 0 10%;
     }
 }
 
 @media only screen and (max-width: 768px) {
     #container {
-        margin: 100px 0;
+        padding: 100px 0;
         display: unset;
     }
     .project-title {

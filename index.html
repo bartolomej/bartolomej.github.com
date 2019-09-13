@@ -17,29 +17,55 @@
     <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
     <meta property="og:type" content="article" />
 
-    <title>Bartolomej Kozorog website.</title>
+    <title>Bartolomej Kozorog website</title>
     <link rel="stylesheet" href="index.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
-<div id="landing-view">
-    <div id="landing-left">
-        <img src="test-image.png">
+<div id="landing-container">
+    <div id="top-bar">
+        <div id="bar-left">
+            <h1>BK</h1>
+        </div>
+        <div id="bar-right">
+            <a href="https://github.com/bartolomej">
+                <img class="badge rotate" src="assets/images/github-logo.png">
+            </a>
+            <a href="https://twitter.com/MKozorog">
+                <img class="badge rotate" src="assets/images/twitter-logo.png">
+            </a>
+        </div>
     </div>
-    <div id="landing-right">
-        <div id="landing-text-view">
-            <h1>Bartolomej Kozorog</h1>
-            <p>Interested in web development, mathematics, distributed systems, trust-less systems, social change,..</p>
+
+    <div id="landing-view">
+        <div id="landing-left">
+            <img id="landing-image"
+                 src="assets/images/landing.png"
+                 data-aos="fade-up"
+                 data-aos-anchor-placement="bottom-bottom">
+        </div>
+        <div id="landing-right"
+             data-aos="fade-up"
+             data-aos-anchor-placement="bottom-bottom">
+            <div id="landing-text-view">
+                <h1>Bartolomej</h1>
+                <h1>Kozorog</h1>
+                <p>Interested in web development, mathematics, distributed systems, trust-less systems, social change,..</p>
+            </div>
         </div>
     </div>
 </div>
 
 <div id="container">
-    <h1 class="project-title">Projects</h1>
+    <h1 class="project-title">My Work</h1>
     <div id="projects-container">
-        <a href="https://bartolomej.github.io/modulo-arithmetics" class="project-card">
+        <a href="https://bartolomej.github.io/modulo-arithmetics"
+           class="project-card"
+           data-aos="fade-up"
+           data-aos-anchor-placement="bottom-bottom">
             <div class="project-card-left">
-                <img class="project-card-image" src="images/modulo.png">
+                <img class="project-card-image" src="assets/images/modulo.png">
             </div>
             <div class="project-card-right">
                 <div class="project-card-text-view">
@@ -48,9 +74,12 @@
                 </div>
             </div>
         </a>
-        <a href="https://bartolomej.github.io/flower" class="project-card">
+        <a href="https://bartolomej.github.io/flower"
+           class="project-card"
+           data-aos="fade-up"
+           data-aos-anchor-placement="bottom-bottom">
             <div class="project-card-left">
-                <img class="project-card-image" src="images/flower.png">
+                <img class="project-card-image" src="assets/images/flower.png">
             </div>
             <div class="project-card-right">
                 <div class="project-card-text-view">
@@ -59,9 +88,12 @@
                 </div>
             </div>
         </a>
-        <a href="https://bartolomej.github.io/pendulum-simulation" class="project-card">
+        <a href="https://bartolomej.github.io/pendulum-simulation"
+           class="project-card"
+           data-aos="fade-up"
+           data-aos-anchor-placement="bottom-bottom">
             <div class="project-card-left">
-                <img class="project-card-image" src="images/pendulum.png">
+                <img class="project-card-image" src="assets/images/pendulum.png">
             </div>
             <div class="project-card-right">
                 <div class="project-card-text-view">
@@ -70,9 +102,12 @@
                 </div>
             </div>
         </a>
-        <a href="https://scng-api.thebartdev.com" class="project-card">
+        <a href="https://scng-api.thebartdev.com"
+           class="project-card"
+           data-aos="fade-up"
+           data-aos-anchor-placement="bottom-bottom">
             <div class="project-card-left">
-                <img class="project-card-image" src="images/scng.png">
+                <img class="project-card-image" src="assets/images/scng.png">
             </div>
             <div class="project-card-right">
                 <div class="project-card-text-view">
@@ -81,9 +116,12 @@
                 </div>
             </div>
         </a>
-        <a href="https://github.com/bartolomej/twitter-network" class="project-card">
+        <a href="https://github.com/bartolomej/twitter-network"
+           class="project-card"
+           data-aos="fade-up"
+           data-aos-anchor-placement="bottom-bottom">
             <div class="project-card-left">
-                <img class="project-card-image" src="images/twitter.png">
+                <img class="project-card-image" src="assets/images/twitter.png">
             </div>
             <div class="project-card-right">
                 <div class="project-card-text-view">
@@ -92,9 +130,12 @@
                 </div>
             </div>
         </a>
-        <a href="https://github.com/bartolomej/neural-network" class="project-card">
+        <a href="https://github.com/bartolomej/neural-network"
+           class="project-card"
+           data-aos="fade-up"
+           data-aos-anchor-placement="bottom-bottom">
             <div class="project-card-left">
-                <img class="project-card-image" src="images/neuralnetwork.png">
+                <img class="project-card-image" src="assets/images/neuralnetwork.png">
             </div>
             <div class="project-card-right">
                 <div class="project-card-text-view">
@@ -103,9 +144,12 @@
                 </div>
             </div>
         </a>
-        <a href="https://github.com/bartolomej/regression" class="project-card">
+        <a href="https://github.com/bartolomej/regression"
+           class="project-card"
+           data-aos="fade-up"
+           data-aos-anchor-placement="bottom-bottom">
             <div class="project-card-left">
-                <img class="project-card-image" src="images/regression.png">
+                <img class="project-card-image" src="assets/images/regression.png">
             </div>
             <div class="project-card-right">
                 <div class="project-card-text-view">
@@ -117,4 +161,19 @@
     </div>
 </div>
 </body>
+<script src="assets/three.r92.min.js"></script>
+<script src="assets/vanta.net.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script>
+  VANTA.NET({
+    el: "#landing-container",
+    backgroundColor: 0xfafafa,
+    points: 9.00,
+    maxDistance: 25.00,
+    spacing: 20.00
+  })
+</script>
 </html>
