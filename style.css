@@ -88,18 +88,42 @@ body {
 
 #top-bar {
     display: flex;
-    flex: 1;
+    flex: 2;
     padding: 20px;
 }
 
+#top-bar a:hover {
+    color: #ff3f81;
+}
+
 #bar-left {
-    flex: 1;
+    flex: 0.5;
+}
+
+.bk-title {
+    color: black;
+    text-decoration: none;
+    font-size: 31px;
+    font-weight: bold;
 }
 
 #bar-right {
-    flex: 1;
+    flex: 2;
     display: flex;
     justify-content: flex-end;
+}
+
+#navigators {
+    flex: 0.3;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#navigators a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
 }
 
 .badge {
@@ -111,6 +135,13 @@ body {
     transform: rotate(360deg);
     transition: transform 0.5s ease-in-out;
 }
+
+@media only screen and (max-width: 1000px) {
+    #navigators {
+        flex: 1;
+    }
+}
+
 
 /***********************
  * LANDING VIEW STYLES *
@@ -196,8 +227,10 @@ body {
 }
 
 .project-title {
+    text-align: center;
     font-size: 40px;
-    padding-bottom: 100px;
+    padding-top: 100px;
+    padding-bottom: 80px;
 }
 
 .project-card {
@@ -242,23 +275,19 @@ body {
 
 @media only screen and (max-width: 1200px) {
     #container {
-        padding: 0 20%;
+        padding: 100px 20%;
     }
 }
 
 @media only screen and (max-width: 1000px) {
     #container {
-        padding: 0 10%;
+        padding: 100px 10%;
     }
 }
 
 @media only screen and (max-width: 768px) {
     #container {
         padding: 100px 0;
-        display: unset;
-    }
-    .project-title {
-        display: none;
     }
     .project-card {
         flex-direction: column;

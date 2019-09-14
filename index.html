@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-147995495-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-147995495-1');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -36,12 +46,14 @@
 <div id="landing-container">
     <div id="top-bar">
         <div id="bar-left">
-            <h1>BK</h1>
+            <a class="bk-title">BK</a>
         </div>
         <div id="bar-right">
-            <a href="https://github.com/bartolomej" target="_blank">
-                <img class="badge rotate" src="assets/images/icons/github.png">
-            </a>
+            <div id="navigators">
+                <a href="#my-work">PROJECTS</a>
+                <a href="#my-blog">BLOG</a>
+                <a href="#about">ABOUT ME</a>
+            </div>
         </div>
     </div>
 
@@ -65,7 +77,7 @@
 </div>
 
 <div id="container">
-    <h1 class="project-title">My Work</h1>
+    <h1 id="my-work" class="project-title">My Work</h1>
     <div id="projects-container">
         <a href="https://bartolomej.github.io/modulo-arithmetics"
            class="project-card"
@@ -242,7 +254,8 @@
     let text = [
       'Interested in web development',
       'Interested in mathematics',
-      'Interested in distributed systems'
+      'Interested in distributed systems',
+      'Interested in social change..'
     ];
     let textElement = document.getElementById('aboutMe');
 
