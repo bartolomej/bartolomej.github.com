@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="icon" href="assets/images/landing.png">
+
     <!-- SEO Meta Tags -->
     <meta name="description" content="Bartolomej Kozorog website.">
     <meta name="author" content="Bartolomej Kozorog">
@@ -18,10 +20,18 @@
     <meta property="og:type" content="article" />
 
     <title>Bartolomej Kozorog website</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+
+<div class="spinner-wrapper">
+    <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+</div>
 
 <div id="landing-container">
     <div id="top-bar">
@@ -29,11 +39,8 @@
             <h1>BK</h1>
         </div>
         <div id="bar-right">
-            <a href="https://github.com/bartolomej">
-                <img class="badge rotate" src="assets/images/github-logo.png">
-            </a>
-            <a href="https://twitter.com/MKozorog">
-                <img class="badge rotate" src="assets/images/twitter-logo.png">
+            <a href="https://github.com/bartolomej" target="_blank">
+                <img class="badge rotate" src="assets/images/icons/github.png">
             </a>
         </div>
     </div>
@@ -51,7 +58,7 @@
             <div id="landing-text-view">
                 <h1>Bartolomej</h1>
                 <h1>Kozorog</h1>
-                <p>Interested in web development, mathematics, distributed systems, trust-less systems, social change,..</p>
+                <p id="aboutMe"></p>
             </div>
         </div>
     </div>
@@ -160,6 +167,34 @@
         </a>
     </div>
 </div>
+
+<div id="footer">
+    <div id="about">
+        <h2>About</h2>
+        <p>High school computer science student from Slovenia. Passionate software developer, thinker, filmographer,..</p>
+    </div>
+    <div id="contact">
+        <h2>Social</h2>
+        <div>
+            <a href="https://twitter.com/MKozorog" target="_blank">
+                <img class="badge rotate" src="assets/images/icons/twitter.png">
+            </a>
+            <a href="https://www.facebook.com/mej.koz" target="_blank">
+                <img class="badge rotate" src="assets/images/icons/fb.png">
+            </a>
+            <a href="https://www.instagram.com/mejkozorog" target="_blank">
+                <img class="badge rotate" src="assets/images/icons/instagram.png">
+            </a>
+            <a href="mailto:bartolomej.kozorog@gmail.com" target="_top">
+                <img class="badge rotate" src="assets/images/icons/mail.png">
+            </a>
+            <a href="https://github.com/bartolomej" target="_blank">
+                <img class="badge rotate" src="assets/images/icons/github.png">
+            </a>
+        </div>
+    </div>
+</div>
+
 </body>
 <script src="assets/three.r92.min.js"></script>
 <script src="assets/vanta.net.min.js"></script>
@@ -171,9 +206,67 @@
   VANTA.NET({
     el: "#landing-container",
     backgroundColor: 0xfafafa,
-    points: 9.00,
+    points: 8.00,
     maxDistance: 25.00,
-    spacing: 20.00
-  })
+    spacing: 25.00
+  });
+  VANTA.NET({
+    el: "#footer",
+    backgroundColor: 0xfafafa,
+    points: 6.00,
+    maxDistance: 25.00,
+    spacing: 35.00
+  });
+
+  window.onload = function () {
+    fadeOutLoader();
+    animateAboutMe();
+  };
+
+  function fadeOutLoader() {
+    let loader = document.getElementsByClassName('spinner-wrapper')[0];
+    let opacity = 1;
+    function fadeOut() {
+      if (opacity <= 0) {
+        loader.style.display = 'none';
+        return;
+      }
+      loader.style.opacity = opacity.toString();
+      opacity -= 0.02;
+      window.requestAnimationFrame(fadeOut);
+    }
+    window.requestAnimationFrame(fadeOut);
+  }
+
+  function animateAboutMe() {
+    let text = [
+      'Interested in web development',
+      'Interested in mathematics',
+      'Interested in distributed systems'
+    ];
+    let textElement = document.getElementById('aboutMe');
+
+    let wordIndex = 0;
+    let textIndex = 0;
+    let forwardType = true;
+    setInterval(() => {
+      textElement.innerText = text[textIndex].substring(0, wordIndex+1);
+
+      if (wordIndex === text[textIndex].length-1) {
+        setTimeout(() => forwardType = false, 500);
+      } else if (!forwardType && wordIndex === 0) {
+        if (textIndex === text.length-1) textIndex = 0;
+        else textIndex++;
+        forwardType = true;
+      }
+      if (forwardType) {
+        wordIndex++;
+      } else {
+        wordIndex--;
+      }
+    }, 80);
+  }
+
+
 </script>
 </html>
