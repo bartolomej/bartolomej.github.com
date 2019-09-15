@@ -17,7 +17,7 @@
     <link rel="icon" href="assets/images/landing.png">
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Bartolomej Kozorog website.">
+    <meta name="description" content="Personal website with projects, blogs and ideas.">
     <meta name="author" content="Bartolomej Kozorog">
 
     <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
@@ -29,7 +29,7 @@
     <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
     <meta property="og:type" content="article" />
 
-    <title>Bartolomej Kozorog website</title>
+    <title>Bartolomej's website</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
@@ -77,6 +77,7 @@
 </div>
 
 <div id="container">
+
     <h1 id="my-work" class="project-title">My Work</h1>
     <div id="projects-container">
         <a href="https://bartolomej.github.io/modulo-arithmetics"
@@ -135,45 +136,63 @@
                 </div>
             </div>
         </a>
-        <a href="https://github.com/bartolomej/twitter-network"
+        <a href="https://github.com/jakic12/bs-teams"
            class="project-card"
            data-aos="fade-up"
            data-aos-anchor-placement="bottom-bottom">
             <div class="project-card-left">
-                <img class="project-card-image" src="assets/images/twitter.png">
+                <img class="project-card-image" src="assets/images/bs.png">
             </div>
             <div class="project-card-right">
                 <div class="project-card-text-view">
-                    <h1>Twitter Network</h1>
-                    <p>3D graph based visualization of twitter network activity (IN DEVELOPMENT).</p>
+                    <h1>BS Teams Website</h1>
+                    <p>This workshop was developed with a team of 8 people during a workshop at Business Solutions.</p>
                 </div>
             </div>
         </a>
-        <a href="https://github.com/bartolomej/neural-network"
+        <a href="https://github.com/bartolomej/wikipedia-network"
            class="project-card"
            data-aos="fade-up"
            data-aos-anchor-placement="bottom-bottom">
             <div class="project-card-left">
-                <img class="project-card-image" src="assets/images/neuralnetwork.png">
+                <img class="project-card-image" src="assets/images/network.png">
             </div>
             <div class="project-card-right">
                 <div class="project-card-text-view">
-                    <h1>Neural Network</h1>
-                    <p>In browser neural network playground (IN DEVELOPMENT).</p>
+                    <h1>Wikipedia knowledge network</h1>
+                    <p>Wikipedia network of connected links.</p>
                 </div>
             </div>
         </a>
-        <a href="https://github.com/bartolomej/regression"
+    </div>
+
+    <h1 id="my-blog" class="project-title">My Blog</h1>
+    <div>
+        <!--a href="blogs/pendulum/index.html"
            class="project-card"
            data-aos="fade-up"
            data-aos-anchor-placement="bottom-bottom">
             <div class="project-card-left">
-                <img class="project-card-image" src="assets/images/regression.png">
+                <img class="project-card-image" src="assets/images/pendulum.png">
             </div>
             <div class="project-card-right">
                 <div class="project-card-text-view">
-                    <h1>Polynomial regression</h1>
-                    <p>In browser polynomial regression playground (IN DEVELOPMENT).</p>
+                    <h1>Pendulum simulation</h1>
+                    <p>Simple explanation of single pendulum oscillatory motion.</p>
+                </div>
+            </div>
+        </a-->
+        <a href="blogs/cool-links/index.html"
+           class="project-card"
+           data-aos="fade-up"
+           data-aos-anchor-placement="bottom-bottom">
+            <div class="project-card-left">
+                <img class="project-card-image" src="assets/images/cool-links.jpg">
+            </div>
+            <div class="project-card-right">
+                <div class="project-card-text-view">
+                    <h1>Cool links and resources</h1>
+                    <p>Collection of different resources and links that I find interesting.</p>
                 </div>
             </div>
         </a>
@@ -252,10 +271,10 @@
 
   function animateAboutMe() {
     let text = [
-      'Interested in web development',
-      'Interested in mathematics',
-      'Interested in distributed systems',
-      'Interested in social change..'
+      'Love developing cool projects and apps 📱',
+      'Curios about nature, math and science 🌳',
+      'Crypto enthusiast ⛓️',
+      'Learning daily out of curiosity 📚'
     ];
     let textElement = document.getElementById('aboutMe');
 
@@ -277,7 +296,7 @@
       } else {
         wordIndex--;
       }
-    }, 80);
+    }, 40);
   }
 
 

@@ -188,6 +188,7 @@ body {
 
 #landing-text-view p {
     margin-top: 20px;
+    line-height: 1.5;
 }
 
 @media only screen and (max-width: 779px) {
@@ -263,15 +264,21 @@ body {
 }
 
 .project-card-text-view h1 {
-    font-size: 28px;
+    font-size: 23px;
     margin-bottom: 10px;
 }
 
-.project-card-image {
-    width: 200px;
+.project-card img {
+    width: 170px;
     margin: auto;
+    -webkit-transition: 0.4s ease;
+    transition: 0.4s ease;
 }
 
+.project-card:hover img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
 
 @media only screen and (max-width: 1200px) {
     #container {
@@ -314,7 +321,8 @@ body {
 
 #footer h2 {
     flex: 1;
-    text-align: center;
+    text-align: end;
+    padding-right: 40px;
 }
 
 #contact {
@@ -342,13 +350,21 @@ body {
 @media only screen and (max-width: 768px) {
     #footer {
         flex-direction: column;
+        padding: 20px;
     }
     #contact {
         flex-direction: column;
         margin: 20px;
     }
     #about {
+        /* dons't display on phone size
+         * because of the footer
+         * background animation scaling  */
+        display: none;
         flex-direction: column;
         margin: 20px;
+    }
+    #footer h2 {
+        padding-bottom: 10px;
     }
 }
