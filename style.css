@@ -107,6 +107,10 @@ body {
     font-weight: bold;
 }
 
+.bk-title:hover {
+    color: #ff3f81;
+}
+
 #bar-right {
     flex: 2;
     display: flex;
@@ -280,6 +284,22 @@ body {
     transform: scale(1.1);
 }
 
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.tag {
+    margin: 0 .5em .5em 0;
+    padding: .3em .9em;
+    border-radius: 3px;
+    color: rgba(255, 63, 129, 0.94);
+    font-size: 11px;
+    background-color: rgba(255, 63, 129, 0.09);
+}
+
 @media only screen and (max-width: 1200px) {
     #container {
         padding: 100px 20%;
@@ -321,29 +341,19 @@ body {
 
 #footer h2 {
     flex: 1;
-    text-align: end;
+    text-align: start;
     padding-right: 40px;
 }
 
-#contact {
-    flex: 1;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+#footer .section {
+    margin: auto 50px;
+}
+
+#footer .section h2 {
+    margin-bottom: 20px;
 }
 
 #contact div {
-    flex: 1;
-}
-
-#about {
-    flex: 1;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-#about p {
     flex: 1;
 }
 
