@@ -118,13 +118,13 @@ body {
 }
 
 #navigators {
-    flex: 0.3;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
 #navigators a {
+    margin-right: 15px;
     text-decoration: none;
     color: black;
     font-weight: bold;
@@ -140,9 +140,17 @@ body {
     transition: transform 0.5s ease-in-out;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 700px) {
     #navigators {
         flex: 1;
+        justify-content: flex-end;
+    }
+    #navigators a {
+        margin-right: 0;
+        display: none;
+    }
+    #navigators a[href='https://github.com/bartolomej'] {
+        display: unset;
     }
 }
 
