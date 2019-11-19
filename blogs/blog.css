@@ -47,6 +47,7 @@
     .header {
         height: 100vh;
         margin: 0;
+        justify-content: space-around;
     }
 }
 
@@ -125,7 +126,6 @@ article a {
  *****************/
 
 footer {
-    width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
