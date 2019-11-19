@@ -1,36 +1,23 @@
-/*****************
- * GLOBAL STYLES *
- *****************/
-
-/*noinspection CssUnknownTarget*/
-@import url('https://fonts.googleapis.com/css?family=Livvic:200,400,700|Spectral:800&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: 'Livvic', sans-serif;
-}
-
 .container {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
+
+/*****************
+ * HEADER STYLES *
+ *****************/
+
 .header {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    flex: 1;
     margin: 100px;
 }
 
 .header h1 {
-    flex: 1;
     margin: 20px;
     text-align: center;
 }
@@ -48,9 +35,24 @@ body {
     flex-direction: row;
 }
 
+.description {
+    text-align: center;
+}
+
 #bk-logo img {
     width: 40px;
 }
+
+@media only screen and (max-width: 800px) {
+    .header {
+        height: 100vh;
+        margin: 0;
+    }
+}
+
+/***************
+ * BODY STYLES *
+ ***************/
 
 .body {
     display: flex;
@@ -70,7 +72,7 @@ article {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 33%;
+    width: 40%;
     padding: 50px 0;
     line-height: 1.6;
 }
@@ -81,8 +83,22 @@ article img {
 }
 
 article p {
-    font-size: 17px;
+    font-size: 18px;
     padding-bottom: 10px;
+    line-height: 1.58;
+    letter-spacing: -0.004em;
+    color: rgba(0, 0, 0, 0.84);
+}
+
+article a {
+    color: black;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 1400px) {
+    article {
+        width: 45%;
+    }
 }
 
 @media only screen and (max-width: 1200px) {
@@ -91,11 +107,22 @@ article p {
     }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1000px) {
     article {
-        width: 88%;
+        width: 80%;
     }
 }
+
+@media only screen and (max-width: 800px) {
+    article {
+        width: 85%;
+    }
+}
+
+
+/*****************
+ * FOOTER STYLES *
+ *****************/
 
 footer {
     width: 100vw;
@@ -110,7 +137,13 @@ footer h3 {
 }
 
 footer a {
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.84);
     text-decoration: none;
+}
+
+footer a:hover {
+    color: #ff3f81;
 }
 
 footer .section {
