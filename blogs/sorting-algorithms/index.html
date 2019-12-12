@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="assets/sorting.png">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Personal website with projects, blogs and ideas.">
+    <meta name="author" content="Bartolomej Kozorog">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+    <meta property="og:site_name" content="" /> <!-- website name -->
+    <meta property="og:site" content="" /> <!-- website link -->
+    <meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+    <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+    <meta property="og:image" content="assets/sorting.png" /> <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+    <meta property="og:type" content="article" />
+
+    <title>Article on Sorting Algorithms</title>
+
+    <link rel="stylesheet" href="../../assets/highlight/styles/darcula.css"/>
+
+    <link rel="stylesheet" href="../blog.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        .section {
+            border-radius: 20px;
+            padding: 40px;
+        }
+        .canvas-wrapper {
+            position: relative;
+        }
+        .canvas-wrapper button {
+            filter: opacity(0.2);
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
+            transition: 0.4s ease-in-out;
+            transform-origin: center center;
+        }
+        .canvas-wrapper button:hover {
+            transform: rotate(360deg);
+            filter: opacity(0.8);
+        }
+        .canvas-wrapper img {
+            width: 100%;
+            height: 100%;
+        }
+        code > button {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
+            transition: 0.4s ease-in-out;
+            filter: opacity(0.6);
+
+        }
+        code > button:hover {
+            transform: scale(1.1);
+            filter: opacity(1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div id="bk-logo">
+        <a href="/" class="bk-title">BK</a>
+    </div>
+
+    <div class="header">
+        <h1>Sorting Algorithms</h1>
+        <img src="assets/sorting.png" alt="Sorting"/>
+        <div class="description">
+            <p>December 11, 2019 • 5 min read 📖</p>
+            <p>A short and simple explanation of well known sorting algorithms,..</p>
+        </div>
+    </div>
+
+    <div class="body">
+        <article>
+            <h2>Overview</h2>
+            <p>Sorted array is an array that has its elements in some particular order. This may be an array of numbers <i>[1,2,3,..]</i>, characters <i>[a,b,c,..]</i>, words <i>[aaa,abb,abc,..]</i>,... Examples in this article will sort array in ascending order.</p>
+
+            <div style="background-color: rgba(242,207,160,0.41)" class="section">
+                <h2>Insertion sort</h2>
+                <ol style="list-style-type: none">
+                    <li><b>STEP 1:</b> Start at array index <code>i = 1</code>.</li>
+                    <li><b>STEP 2:</b> Iterate from current index <code>i</code> until where previous element is larger than current or until index doesn't equal <code>i = 0</code></li>
+                    <li><b>STEP 3:</b> Swap where previous element is larger than current.</li>
+                    <li><b>STEP 4:</b> Increment current index <code>i++</code>, and repeat from <b>STEP 2</b>.</li>
+                </ol>
+                <pre><code id="insertion-code" class="javascript">
+                    <button onclick="copy('insertion-code')"><img alt="copy" src="assets/copy.svg"/></button>
+// step 1
+for (let i = 1; i < array.length; i++) {
+    let j = i;
+    // step 2
+    while (j >= 0 && array[j - 1] > array[j]) {
+        // step 3
+        let s = array[j - 1];
+        array[j - 1] = array[j];
+        array[j] = s;
+        j--;
+    }
+}
+                </code></pre>
+                <div class="canvas-wrapper">
+                    <button onclick="startSort('insertion', insertionSortAscending)"><img src="assets/reset.png" alt="reset"/></button>
+                    <canvas id="insertion-sort-canvas"></canvas>
+                </div>
+            </div>
+
+            <div style="background-color: rgba(227,255,255,0.51)" class="section">
+                <h2>Selection sort</h2>
+                <ol style="list-style-type: none">
+                    <li><b>STEP 1:</b> Start at array index <code>i = 0</code>.</li>
+                    <li><b>STEP 2:</b> Iterate from current index <code>i</code> to the end of array.</li>
+                    <li><b>STEP 3:</b> If smallest element found - save its index.</li>
+                    <li><b>STEP 4:</b> Swap current element at <code>array[i]</code> with smallest element in array at <code>array[k]</code>.</li>
+                    <li><b>STEP 5:</b> Increment current index <code>i++</code>, and repeat from <b>STEP 2</b>.</li>
+                </ol>
+                <pre><code id="selection-code" class="javascript">
+                    <button onclick="copy('selection-code')"><img alt="copy" src="assets/copy.svg"/></button>
+// step 1
+for (let i = 0; i < array.length - 1; i++) {
+    let k = i;
+    // step 2
+    for (let j = i; j < array.length; j++) {
+        // step 3
+        if (array[j] < array[i]) {
+            k = j;
+        }
+    }
+    // step 4
+    let current = array[i];
+    array[i] = array[k];
+    array[k] = current;
+}
+                </code></pre>
+                <canvas id="selection-sort-canvas"></canvas>
+            </div>
+
+            <div style="background-color: rgba(254,254,212,0.51)" class="section">
+                <h2>Bubble sort</h2>
+                <ol style="list-style-type: none">
+                    <li><b>STEP 1:</b> Keep track if any elements were swapped in the last iteration.</li>
+                    <li><b>STEP 2:</b> Iterate from start <code>i = 1</code> to the end of array <code>i = array.length</code>.</li>
+                    <li><b>STEP 3:</b> If current element smaller than previous element, swap these two elements. Mark that you have performed a swap in this iteration.</li>
+                    <li><b>STEP 4:</b> Repeat from <b>STEP 2</b></li>
+                </ol>
+                <pre><code id="bubble-code" class="javascript">
+                    <button onclick="copy('bubble-code')"><img alt="copy" src="assets/copy.svg"/></button>
+// step 1
+let swapped = true;
+while (swapped) {
+    swapped = false;
+    // step 2
+    for (let i = 1; i < array.length; i++) {
+          // step 3
+          if (array[i] < array[i - 1]) {
+                let element = array[i];
+                array[i] = array[i - 1];
+                array[i - 1] = element;
+                swapped = true;
+          }
+    }
+}
+                </code></pre>
+                <canvas id="bubble-sort-canvas"></canvas>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <div class="section">
+            <h3>Further Readings:</h3>
+            <ul>
+                <li><a href="https://brilliant.org/wiki/sorting-algorithms/">Article on Brilliant.org</a></li>
+                <li><a href="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Sorting%20Algorithms/sorting.html">Sorting algorithms</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</div>
+<script>
+    async function copy (elementId) {
+      let text = document.getElementById(elementId).innerText;
+      let lines = text.split('\n');
+      let copyText = '';
+      for (let l of lines) {
+        if (l.length === 0) continue;
+        if (!l.replace(/\s/g, '').length) continue;
+        if (l.replace(/^\s+/g, '').substring(0, 2) === '//') continue;
+        copyText += `${l}\n`;
+      }
+      await navigator.clipboard.writeText(copyText);
+    }
+</script>
+<script src="../../assets/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="sketch.js"></script>
+</body>
+</html>
