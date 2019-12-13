@@ -5,17 +5,39 @@ let insertionCtx = getCanvasContext('insertion-sort-canvas');
 let selectionCtx = getCanvasContext('selection-sort-canvas');
 let bubbleCtx = getCanvasContext('bubble-sort-canvas');
 
+let insertionInterval;
+let selectionInterval;
+let bubbleInterval;
+
 function startAnimation () {
-  startInsertion();
+  startInsertionSort();
+  startSelectionSort();
+  startBubbleSort();
 }
 
-function startInsertion () {
-  let g = selectionSortAscending([50,40,30,20,10]);
-  setInterval(() => {
+function startInsertionSort () {
+  clearInterval(insertionInterval);
+  insertionInterval = animate(insertionCtx, insertionSortAscending);
+}
+
+function startSelectionSort () {
+  clearInterval(selectionInterval);
+  selectionInterval = animate(selectionCtx, selectionSortAscending);
+}
+
+function startBubbleSort () {
+  clearInterval(bubbleInterval);
+  bubbleInterval = animate(bubbleCtx, bubbleSortAscending);
+}
+
+function animate (ctx, func, array) {
+  let g = func(randArray(100, 100));
+  let interval = setInterval(() => {
     let nextValue = g.next().value;
-    console.log(nextValue);
-    drawArray(insertionCtx, nextValue)
-  }, 2000)
+    if (!nextValue) return clearInterval(interval);
+    drawArray(ctx, nextValue)
+  }, 50);
+  return interval;
 }
 
 function randArray (size, max) {
@@ -31,30 +53,11 @@ function getCanvasContext (id, width, height) {
   return canvas.getContext('2d');
 }
 
-function animateSort ({ ctx, generator }) {
-  return window.requestAnimationFrame(draw);
-
-  function draw () {
-    window.requestAnimationFrame(draw);
-
-    let nextResult = generator.next();
-    if (nextResult.done) return;
-    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-    ctx.moveTo(0, ctx.canvas.height);
-    let array = nextResult.value;
-    let stepX = ctx.canvas.width / array.length;
-    for (let i = 0; i < array.length; i++) {
-      ctx.moveTo(i * stepX, ctx.canvas.height);
-      ctx.lineTo(i * stepX, array[i]);
-    }
-    ctx.stroke();
-  }
-}
-
 function drawArray (ctx, array) {
   ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
   ctx.moveTo(0, ctx.canvas.height);
   let stepX = Math.round(ctx.canvas.width / array.length);
+  ctx.beginPath();
   for (let i = 0; i < array.length; i++) {
     ctx.moveTo(i * stepX, ctx.canvas.height);
     ctx.lineTo(i * stepX, ctx.canvas.height - array[i]);

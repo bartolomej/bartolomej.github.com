@@ -123,7 +123,7 @@ for (let i = 1; i < array.length; i++) {
 }
                 </code></pre>
                 <div class="canvas-wrapper">
-                    <button onclick="startSort('insertion', insertionSortAscending)"><img src="assets/reset.png" alt="reset"/></button>
+                    <button onclick="startInsertionSort()"><img src="assets/reset.png" alt="reset"/></button>
                     <canvas id="insertion-sort-canvas"></canvas>
                 </div>
             </div>
@@ -155,7 +155,10 @@ for (let i = 0; i < array.length - 1; i++) {
     array[k] = current;
 }
                 </code></pre>
-                <canvas id="selection-sort-canvas"></canvas>
+                <div class="canvas-wrapper">
+                    <button onclick="startSelectionSort()"><img src="assets/reset.png" alt="reset"/></button>
+                    <canvas id="selection-sort-canvas"></canvas>
+                </div>
             </div>
 
             <div style="background-color: rgba(254,254,212,0.51)" class="section">
@@ -184,7 +187,10 @@ while (swapped) {
     }
 }
                 </code></pre>
-                <canvas id="bubble-sort-canvas"></canvas>
+                <div class="canvas-wrapper">
+                    <button onclick="startBubbleSort()"><img src="assets/reset.png" alt="reset"/></button>
+                    <canvas id="bubble-sort-canvas"></canvas>
+                </div>
             </div>
         </article>
     </div>
