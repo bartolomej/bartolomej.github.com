@@ -83,15 +83,15 @@ function* insertionSortAscending (array) {
 function* selectionSortAscending (array) {
   let cloned = Array.from(array);
   for (let i = 0; i < cloned.length - 1; i++) {
-    let k = i;
+    let minIndex = i;
     for (let j = i; j < cloned.length; j++) {
-      if (cloned[j] < cloned[i]) {
-        k = j;
+      if (cloned[j] > cloned[minIndex]) {
+        minIndex = j;
       }
     }
     let current = cloned[i];
-    cloned[i] = cloned[k];
-    cloned[k] = current;
+    cloned[i] = cloned[minIndex];
+    cloned[minIndex] = current;
     yield cloned;
   }
   return cloned;

@@ -5,7 +5,9 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-147995495-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+
+      function gtag () {dataLayer.push(arguments);}
+
       gtag('js', new Date());
 
       gtag('config', 'UA-147995495-1');
@@ -21,13 +23,13 @@
     <meta name="author" content="Bartolomej Kozorog">
 
     <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
-    <meta property="og:site_name" content="" /> <!-- website name -->
-    <meta property="og:site" content="" /> <!-- website link -->
+    <meta property="og:site_name" content=""/> <!-- website name -->
+    <meta property="og:site" content=""/> <!-- website link -->
     <meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
-    <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
-    <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
-    <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
-    <meta property="og:type" content="article" />
+    <meta property="og:description" content=""/> <!-- description shown in the actual shared post -->
+    <meta property="og:image" content=""/> <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content=""/> <!-- where do you want your post to link to -->
+    <meta property="og:type" content="article"/>
 
     <title>Bartolomej's website</title>
     <link rel="stylesheet" href="style.css">
@@ -46,7 +48,7 @@
 <div id="landing-container">
     <div id="top-bar">
         <div id="bar-left">
-            <a class="bk-title">BK</a>
+            <a class="bk-title" href="#">BK</a>
         </div>
         <div id="bar-right">
             <div id="navigators">
@@ -55,7 +57,7 @@
                 <a href="#my-blog">BLOG</a>
                 <a href="#about">ABOUT ME</a>
                 <a href="https://github.com/bartolomej" target="_blank">
-                    <img class="badge rotate" src="assets/images/icons/github.png">
+                    <img alt="GitHub logo" class="badge rotate" src="assets/images/icons/github.png">
                 </a>
             </div>
         </div>
@@ -83,8 +85,10 @@
 
 <div id="container">
 
+    <div id="container-bcg"></div>
+
     <div id="projects-container" class="container-section">
-        <h1 id="my-work" class="project-title">My Work</h1>
+        <h1 id="my-work" class="section-title" style="padding-top: 0">My Work</h1>
 
         <a href="https://bartolomej.github.io/modulo-arithmetics"
            class="project-card"
@@ -286,7 +290,7 @@
                 </div>
             </div>
         </a>
-		<a href="/cool-links"
+        <a href="/cool-links"
            class="project-card"
            data-aos="fade-up"
            data-aos-anchor-placement="top-bottom">
@@ -365,7 +369,7 @@
 
 
     <div id="progress-container" class="container-section">
-        <h1 id="in-progress" class="project-title">Working on</h1>
+        <h1 id="in-progress" class="section-title">Working on</h1>
 
         <a href="https://github.com/bartolomej/its-server"
            class="project-card"
@@ -427,7 +431,7 @@
     </div>
 
     <div class="container-section">
-        <h1 id="my-blog" class="project-title">My Blog</h1>
+        <h1 id="my-blog" class="section-title">My Blog</h1>
 
         <a href="blogs/dao/index.html"
            class="project-card"
@@ -482,7 +486,7 @@
 
 <div id="footer">
     <div class="section" id="about">
-        <h2>About</h2>
+        <h2>About Me</h2>
         <div>
             <p>High school computer science student from Slovenia. </p>
             <p>Passionate software developer, thinker, filmographer,..</p>
@@ -539,10 +543,11 @@
     animateAboutMe();
   };
 
-  function fadeOutLoader() {
+  function fadeOutLoader () {
     let loader = document.getElementsByClassName('spinner-wrapper')[0];
     let opacity = 1;
-    function fadeOut() {
+
+    function fadeOut () {
       if (opacity <= 0) {
         loader.style.display = 'none';
         return;
@@ -551,10 +556,11 @@
       opacity -= 0.02;
       window.requestAnimationFrame(fadeOut);
     }
+
     window.requestAnimationFrame(fadeOut);
   }
 
-  function animateAboutMe() {
+  function animateAboutMe () {
     let text = [
       'Love developing cool projects and apps 📱',
       'Curios about nature, math and science 🌳',
@@ -562,24 +568,37 @@
       'Learning daily out of curiosity 📚'
     ];
     let textElement = document.getElementById('aboutMe');
-
+    let presses = [161, 135, 69, 120, 119, 339, 339, 80, 121, 112, 100, 139, 280, 100, 164, 92, 136, 112, 178, 426, 161, 19, 72, 221, 144, 182, 85, 250, 112, 128, 215, 340, 208, 7, 193, 19, 167, 24, 720, 163, 117, 112, 135, 150, 159, 190, 108, 92, 124, 32, 104, 140];
+    let pressIndex = 0;
+    let forwardPress = true;
     let wordIndex = 0;
     let textIndex = 0;
     let forwardType = true;
-    setInterval(() => {
-      textElement.innerText = text[textIndex].substring(0, wordIndex+1);
 
-      if (wordIndex === text[textIndex].length-1) {
-        setTimeout(() => forwardType = false, 500);
+    setInterval(() => {
+      setTimeout(() => {
+        textElement.innerHTML = text[textIndex].substring(0, wordIndex + 1) + '  '
+          + '<span style="background-color: #AAAAAA; padding: 0 4px;"></span>';
+      }, presses[pressIndex] / 4);
+
+      if (wordIndex === text[textIndex].length - 1) {
+        setTimeout(() => forwardType = false, 300);
       } else if (!forwardType && wordIndex === 0) {
-        if (textIndex === text.length-1) textIndex = 0;
+        if (textIndex === text.length - 1) textIndex = 0;
         else textIndex++;
         forwardType = true;
       }
+
       if (forwardType) {
         wordIndex++;
       } else {
         wordIndex--;
+      }
+
+      if (forwardPress) {
+        pressIndex++;
+      } else {
+        pressIndex--;
       }
     }, 40);
   }
