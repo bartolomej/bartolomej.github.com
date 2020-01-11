@@ -240,6 +240,10 @@ body {
     border-top: 4px dotted #ff3f81;
 }
 
+#projects-container {
+    width: 100%;
+}
+
 #container-bcg {
     position: absolute;
     top: 0;
@@ -252,11 +256,19 @@ body {
     filter: blur(5px);
 }
 
+/**
+ * set animation duration for AOS library
+ * (fade-up animations on project cards)
+ */
+a[data-aos] {
+    transition-duration: 0.15s;
+}
+
 .section-title {
     text-align: center;
     font-size: 40px;
     padding-bottom: 60px;
-    padding-top: 90px;
+    padding-top: 120px;
 }
 
 .project-card {
@@ -264,7 +276,7 @@ body {
     flex: 3;
     text-decoration: none;
     flex-direction: row;
-    transition: 0.4s margin;
+    transition: 0.2s margin;
 }
 
 .project-card:not(:last-child) {
@@ -365,6 +377,12 @@ body {
     }
     .project-card:hover .project-card-right {
         transform: translateY(5%);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #projects-container {
+        width: 100%;
     }
 }
 
