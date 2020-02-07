@@ -165,6 +165,7 @@ body {
 
 #landing-container {
     height: 100vh;
+    filter: blur(1px);
 }
 
 #landing-view {
